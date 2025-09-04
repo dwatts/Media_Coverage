@@ -8,6 +8,18 @@ $('.app-image').click(function (e) {
   $('#img-caption').html(caption);
 });
 
+/***Fade in Splash Screen on Load***/
+
+$(document).ready(function(){
+    $('.splash-container').fadeIn(700);
+});
+
+/***Close Splash Screen***/
+
+$('.splash-btn').click(function () {
+    $('.splash-container').fadeOut(700);
+})
+
 /***Trigger About Modal***/
 
 $('.nav-item:nth-of-type(5)').click(function () {
