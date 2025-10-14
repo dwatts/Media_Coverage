@@ -142,7 +142,7 @@ require(["esri/views/SceneView", "esri/WebScene", "esri/layers/FeatureLayer", "e
         },
         constraints: {
           altitude: {
-            min: 500000,
+            min: 200000,
             max: 8000000
           }
         },

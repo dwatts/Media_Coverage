@@ -976,7 +976,7 @@
       "Date": "May 15, 1968",
       "Transcript": "",
       "Url": "./assets/images/All.png",
-      "AudioURL": "./assets/audio/file_example_MP3_1MG.mp3",
+      "AudioURL": "./assets/audio/SideAclipped.mp3",
       "Caption": "Placeholder Title"
     },
     {
@@ -990,7 +990,7 @@
       "Date": "June 11, 1968",
       "Transcript": "",
       "Url": "./assets/images/All.png",
-      "AudioURL": "https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3",
+      "AudioURL": "./assets/audio/SideBclipped.mp3",
       "Caption": "True Unity News of Resurrection City, Volume 1, Number 5"
     },
     {
