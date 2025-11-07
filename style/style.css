@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Oswald:wght@100..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
 :root {
   --Anton: "Anton", sans-serif;
   --Antonio: "Antonio", sans-serif;
-  --Bodoni:"Bodoni Moda", serif;
+  --Bodoni:"Lato", sans-serif;
   --Oswald: "Oswald", sans-serif;
   --Background: rgba(170, 138, 82, 0.95);
   --Background-Alt: rgba(216, 182, 125, 0.95);
@@ -40,8 +41,9 @@ body,
     font-family: var(--Anton);
     color: var(--Dark-Brown);
     font-weight: 500;
-    font-size: .8rem;
+    font-size: .85rem;
     transition: color .3s;
+    letter-spacing: .05rem;
 }
 
 .link:hover {
@@ -90,7 +92,7 @@ body,
     align-items: center;
     justify-content: space-between;
     margin-left: 3rem;
-    width: 32rem;
+    width: 40rem;
 }
 
 .logo-title img {
@@ -142,13 +144,77 @@ body,
 .nav-link {
     font-family: var(--Bodoni);
     color: var(--Dark-Brown);
-    font-weight: 700;
-    font-size: 1rem;
+    font-weight: 500;
+    font-size: 1.1rem;
     text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     transition: color 0.3s;
 }
 
 /*End Navbar*/
+
+/*Side Panel Buttons Container*/
+
+.left-panel-btn-container {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    width: 6rem;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.right-panel-btn-container {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    width: 6rem;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*Zoom In / Out Button*/
+
+.zoom-in-btn,
+.zoom-out-btn {
+    /* position: absolute; */
+    bottom: 4rem;
+    right: 4rem;
+    z-index: 2
+}
+
+.zoom-in-btn,
+.zoom-out-btn {
+    cursor: pointer;
+    /* position: absolute; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* bottom: 2rem;
+    left:2rem; */
+    height:2.5rem;
+    width:2.5rem;
+    border-radius: 50%;
+    background-color: var(--Background-Blue);
+    box-shadow: 0 1rem 5rem rgb(0, 0, 0, 0.6);
+    transition: all .3s;
+    z-index: 2;
+}
+
+.zoom-in-btn i,
+.zoom-out-btn i {
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+.zoom-in-btn:hover,
+.zoom-out-btn:hover {
+    background-color: var(--Dark-Brown) !important;
+    transform: translateY(-0.09rem);
+}
 
 /*Splash Page*/
 
@@ -264,12 +330,12 @@ body,
 
 .panel-btn {
     cursor: pointer;
-    position: absolute;
+    /* position: absolute; */
     display: flex;
     align-items: center;
     justify-content: center;
-    bottom: 2rem;
-    left:2rem;
+    /* bottom: 2rem;
+    left:2rem; */
     height:2.5rem;
     width:2.5rem;
     border-radius: 50%;
@@ -382,7 +448,7 @@ body,
     font-size: .9rem;
     color: var(--Dark-Brown);
     margin: .75rem 0;
-    font-weight: 200;
+    font-weight: 400;
     line-height: 1.35rem;
     letter-spacing: .02rem;
 }
@@ -406,12 +472,12 @@ body,
 
 .help-btn {
     cursor: pointer;
-    position: absolute;
+    /* position: absolute; */
     display: flex;
     align-items: center;
     justify-content: center;
-    bottom: 2rem;
-    right:2rem;
+    /* bottom: 2rem;
+    right:2rem; */
     height:2.5rem;
     width:2.5rem;
     border-radius: 50%;
@@ -550,11 +616,12 @@ body,
 .article {
     font-family: var(--Anton);
     color: var(--Dark-Brown);
-    letter-spacing: .15rem;
+    letter-spacing: .2rem;
     font-size: 1.2rem;
     font-weight: 600;
     text-align: center;
     padding: .5rem 0;
+    text-transform: uppercase;
 }
 
 .article-container {
@@ -567,14 +634,14 @@ body,
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--Dark-Brown);
-    padding: .15rem 0;
+    padding: .5rem 0;
 }
 
 .place,
 .date {
     font-family: var(--Bodoni);
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--Dark-Brown);
     padding-bottom: .15rem;
 }
@@ -586,10 +653,11 @@ body,
 .details {
     font-family: var(--Bodoni);
     font-size: .9rem;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--Dark-Brown);
     line-height: 1.35rem;
     letter-spacing: .02rem;
+    padding-top: .3rem;
 }
 
 /*Transcript Section Styling*/
@@ -608,7 +676,7 @@ body,
     border:none;
     color: #fff;
     font-family: var(--Bodoni);
-    font-size: .8rem;
+    font-size: .9rem;
     margin: 1rem 0;
 }
 

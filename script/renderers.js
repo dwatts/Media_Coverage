@@ -18,11 +18,11 @@ function getSiteColorTwo(icon) {
         // material: {
         //   color: "red",
         // },
-        size: 22,
-        outline: {
-          color: "red",
-          size: 2,
-        },
+        size: 24,
+        // outline: {
+        //   color: "red",
+        //   size: 2,
+        // },
       },
     ],
 
