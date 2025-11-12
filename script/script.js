@@ -17,9 +17,12 @@ $('.app-image').click(function (e) {
 
 /***Fade in Splash Screen on Load***/
 
-// $(document).ready(function(){
-//     $('.splash-container').fadeIn(700);
-// });
+$(document).ready(function(){
+    $(".splash-container")
+    .css("display", "flex")
+    .hide()
+    .fadeIn();
+});
 
 /***Close Splash Screen***/
 
