@@ -17,9 +17,9 @@ $('.app-image').click(function (e) {
 
 /***Fade in Splash Screen on Load***/
 
-$(document).ready(function(){
-    $('.splash-container').fadeIn(700);
-});
+// $(document).ready(function(){
+//     $('.splash-container').fadeIn(700);
+// });
 
 /***Close Splash Screen***/
 
@@ -73,31 +73,7 @@ const cities = new FeatureLayer({
   renderer: mediaRenderer,
   outFields: ["*"],
   popupEnabled: false,
-  labelingInfo: [
-    {
-      labelExpressionInfo: {
-        value: "{City}, {State}"
-      },
-      maxScale: 0,
-      minScale: 5000000,
-      symbol: {
-        type: "label-3d",
-        symbolLayers: {
-          type: "text",
-          material: { color: [64, 46, 50] },
-          size: 11,
-          font: {
-            family: "Lato",
-            weight: "bold"
-          },
-          halo: {
-            color: [255, 255, 255, 0.7], 
-            size: 2
-          }
-        }
-      }
-    }
-  ]
+  labelingInfo: [cityLabels]
 });
 
 /***Basemap Layers***/
@@ -153,7 +129,7 @@ const view = new SceneView({
       position: {
         // spatialReference: {
         //   latestWkid: 3857,
-        //   wkid: 2857
+        //   // wkid: 3857
         // },
         x: -97.3497654896104,
         y: 38.938391919294915,
@@ -171,8 +147,16 @@ const view = new SceneView({
 /***Custom Zoom In/Out Buttons***/
 
 function changeZoom(delta) {
-  const targetZoom = view.zoom + delta;
-  view.goTo({ zoom: targetZoom }, { duration: 400, easing: "ease-in-out" });
+  const camera = view.camera.clone();
+  // const scale = delta > 0 ? 0.9 : 1.1; // zoom in/out
+  const scale = delta > 0 ? 0.7 : 1.3;
+  const newPos = camera.position.clone();
+  newPos.x = (newPos.x - view.center.x) * scale + view.center.x;
+  newPos.y = (newPos.y - view.center.y) * scale + view.center.y;
+  newPos.z = (newPos.z - view.center.z) * scale + view.center.z;
+  
+  camera.position = newPos;
+  view.goTo(camera, { duration: 500, easing: "ease-in-out" });
 }
 
 document.getElementById("zoom-in-btn").addEventListener("click", () => {
