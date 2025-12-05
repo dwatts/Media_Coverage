@@ -68,6 +68,13 @@ $('#help-close').click(function(){
   $('#help-btn').toggleClass('on');
 });
 
+/***Close popups***/
+
+$('#city-close, #caravan-close' ).click(function(){
+    $('#cardId').fadeOut();
+    highlight?.remove();
+});
+
 /***Add Map Layers***/
 
 const cities = new FeatureLayer({
