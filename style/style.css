@@ -455,6 +455,7 @@ body,
     letter-spacing: .15rem;
     font-size: 1.5rem;
     text-transform: uppercase;
+    cursor: default;
 }
 
 .side-panel-text p,
@@ -470,6 +471,7 @@ body,
     font-weight: 400;
     line-height: 1.35rem;
     letter-spacing: .02rem;
+    cursor: default;
 }
 
 .side-panel-text img {
