@@ -643,6 +643,7 @@ body,
     text-align: center;
     padding: .5rem 0;
     text-transform: uppercase;
+    cursor: default;
 }
 
 .article-container {
@@ -656,6 +657,7 @@ body,
     font-weight: 600;
     color: var(--Dark-Brown);
     padding: .5rem 0;
+    cursor: default;
 }
 
 .place,
@@ -665,6 +667,7 @@ body,
     font-weight: 600;
     color: var(--Dark-Brown);
     padding-bottom: .15rem;
+    cursor: default;
 }
 
 .place-date-container {
@@ -699,6 +702,7 @@ body,
     line-height: 1.35rem;
     letter-spacing: .02rem;
     padding-top: .3rem;
+    cursor: default;
 }
 
 /*Transcript Section Styling*/
@@ -741,6 +745,11 @@ body,
     display: flex;
     width: 6rem;
     justify-content: space-evenly;
+}
+
+.counter-container p {
+    cursor: default;
+    color: var(--Dark-Brown);
 }
 
 .paginate-btn {
@@ -826,6 +835,7 @@ body,
     font-family: var(--Bodoni);
     font-size: .8rem;
     color: var(--Dark-Brown);
+    cursor: default;
 }
 
 /***End General Popup Styling***/
