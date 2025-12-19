@@ -585,7 +585,8 @@ body,
 .modal-inner {
     width: 50rem;
     /* height: 30rem; */
-    height: auto;
+    height: 45vh;
+    /* max-height: 60vh; */
     background: linear-gradient(var(--Background-Blue), var(--Background-Blue-Alt));
     padding: 1.5rem;
     top: 50%;
@@ -614,6 +615,12 @@ body,
     margin-top: 1.5rem;
     border-radius: .5rem;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.15);
+}
+
+.modal-transcript-text {
+    width: 100%;
+    height: 85%;
+    overflow-y: auto;
 }
 
 /***End About Modal***/

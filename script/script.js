@@ -124,6 +124,7 @@ const view = new SceneView({
     map: map,
     qualityProfile: "high",
     highlights: [
+      {name: "notable", color: "#51ff00ff", haloColor: "#c8ff00ff", haloOpacity: 1, fillOpacity: 0, shadowOpacity: 0.2},
       {name: "custom", color: "#649b92", haloColor: "#649b92", haloOpacity: 0.9, fillOpacity: 0.5, shadowOpacity: 0.2}
     ],
     environment: {
@@ -157,6 +158,15 @@ const view = new SceneView({
         components: []
     },
     viewingMode: "global"
+});
+
+/***Add Highlight for Specific Media Locations***/
+
+const specificIds = [10, 30, 57];
+let highlightHandle;
+
+view.whenLayerView(cities).then((layerViewHighlight) => {
+  highlightHandle = layerViewHighlight.highlight(specificIds, { name: "notable"});
 });
 
 /***Custom Zoom In/Out Buttons***/
@@ -314,6 +324,10 @@ view.on("immediate-click", (event) => {
         /***Highlight points functionality***/
 
         let result = hitResult.results[0].graphic;
+
+        let resultObjectID = result.attributes;
+
+        console.log(resultObjectID);
 
         view.whenLayerView(result.layer).then((layerView) => {
             highlight?.remove();
