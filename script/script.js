@@ -83,7 +83,8 @@ $('#city-close, #caravan-close' ).click(function(){
 /***Add Map Layers***/
 
 const cities = new FeatureLayer({
-  url: "https://services2.arcgis.com/njxlOVQKvDzk10uN/arcgis/rest/services/Media_Coverage/FeatureServer/0",
+  // url: "https://services2.arcgis.com/njxlOVQKvDzk10uN/arcgis/rest/services/Media_Coverage/FeatureServer/0",
+  url: "https://services3.arcgis.com/9nfxWATFamVUTTGb/arcgis/rest/services/Media_Coverage_Cities/FeatureServer",
   id: 'cities',
   renderer: mediaRenderer,
   outFields: ["*"],
@@ -124,7 +125,7 @@ const view = new SceneView({
     map: map,
     qualityProfile: "high",
     highlights: [
-      {name: "notable", color: "#51ff00ff", haloColor: "#c8ff00ff", haloOpacity: 1, fillOpacity: 0, shadowOpacity: 0.2},
+      {name: "notable", color: "#ff1303", haloColor: "#ff1303", haloOpacity: 1, fillOpacity: 0, shadowOpacity: 0.2},
       {name: "custom", color: "#649b92", haloColor: "#649b92", haloOpacity: 0.9, fillOpacity: 0.5, shadowOpacity: 0.2}
     ],
     environment: {
