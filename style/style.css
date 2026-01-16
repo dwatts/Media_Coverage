@@ -645,6 +645,7 @@ body,
 
 .popup-container {
     overflow-y: auto;
+    padding-right: .25rem;
 }
 
 .popup img {
