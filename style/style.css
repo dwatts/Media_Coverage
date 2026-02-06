@@ -870,3 +870,45 @@ body,
 }
 
 /***End General Popup Styling***/
+
+/***All Tooltip Styling***/
+
+.tooltiptext {
+    visibility: hidden;
+    width: 6rem;
+    background-color: var(--Dark-Brown);
+    text-align: center;
+    border-radius: .5rem;
+    padding: .5rem 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -3rem;
+    font-family: var(--Bodoni);
+    font-size: .8rem;
+    color: #fff;
+    font-weight: 400;
+    line-height: 1.35rem;
+    letter-spacing: .02rem;
+    box-shadow: 0 0 0 1px var(--Dark-Brown); 
+}
+
+.tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -.35rem;
+    border-width: .35rem;
+    border-style: solid;
+    border-color: var(--Dark-Brown) transparent transparent transparent;
+    z-index: 1;
+}
+
+.panel-btn:hover .tooltiptext,
+.help-btn:hover .tooltiptext,
+.zoom-in-btn:hover .tooltiptext,
+.zoom-out-btn:hover .tooltiptext {
+    visibility: visible;
+}
