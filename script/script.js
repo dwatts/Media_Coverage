@@ -35,6 +35,12 @@ $('.splash-btn').click(function () {
     $('.splash-container').fadeOut(700);
 })
 
+/***Trigger Nav Modal***/
+
+$('.logo-title img').click(function () {
+  $('#nav-modal').fadeIn(500);
+})
+
 /***Trigger About Modal***/
 
 $('.nav-item:nth-of-type(5)').click(function () {
@@ -43,9 +49,10 @@ $('.nav-item:nth-of-type(5)').click(function () {
 
 /***Close all modals***/
 
-$('#about-close, #img-close, #transcript-close').click(function () {
+$('#about-close, #nav-close, #img-close, #transcript-close').click(function () {
     $('#img-modal').fadeOut(500);
     $('#about-modal').fadeOut(500);
+    $('#nav-modal').fadeOut(500);
     $('#transcript-modal').fadeOut(500);
 })
 
@@ -83,7 +90,6 @@ $('#city-close, #caravan-close' ).click(function(){
 /***Add Map Layers***/
 
 const cities = new FeatureLayer({
-  // url: "https://services2.arcgis.com/njxlOVQKvDzk10uN/arcgis/rest/services/Media_Coverage/FeatureServer/0",
   url: "https://services3.arcgis.com/9nfxWATFamVUTTGb/arcgis/rest/services/Media_Coverage_Cities/FeatureServer",
   id: 'cities',
   renderer: mediaRenderer,
@@ -96,7 +102,7 @@ const cities = new FeatureLayer({
 
 const vectorTileLayer = new VectorTileLayer({
     portalItem: {
-      id: "86a5d38d9933473cb9c7645f61068295", // Custom CRMP Basemap
+      id: "5e9f2604139f4a9e87999147cdf11eda", // Custom CRMP Basemap
     },
     opacity: 0.75,
   });
@@ -230,6 +236,7 @@ let totalCount = document.getElementById('totalText');
 
 let recordCounter = 0;
 let currentRecordIndex = 0;
+let dynamicCaption;
 
 //Reset audio player timer & progress bar
 
@@ -247,6 +254,7 @@ let arr = [];
 
 let highlight;
 
+
 view.on("immediate-click", (event) => {
   view.hitTest(event).then((hitResult) => {
     if (hitResult.results.length > 0 && hitResult.results[0].graphic.layer.id == "cities") {
@@ -261,7 +269,6 @@ view.on("immediate-click", (event) => {
       let attributes = hitResult.results[0].graphic.attributes;
 
       /***Set Popup Modal Image Caption***/
-      $('#popup-image-id').attr('data-caption', attributes.Caption);
 
       const mediaType = attributes.MediaType;
 
@@ -286,6 +293,9 @@ view.on("immediate-click", (event) => {
             // Set initial image and details info to first record
 
             let length = arr.length;
+            dynamicCaption = arr[0].Caption;
+
+            $('#popup-image-id').attr('data-caption', dynamicCaption);
 
             newspaper.innerHTML = arr[0].Newspaper;
             imgUrl.src = arr[0].Url;
@@ -293,7 +303,7 @@ view.on("immediate-click", (event) => {
             article.innerHTML = arr[0].Title;
             details.innerHTML = arr[0].Topic;
             place.innerHTML = `${arr[0].City}, ${arr[0].State}`;
-            date.innerHTML = `\u00A0/ ${arr[0].Date}`;
+            date.innerHTML = `&nbsp;|&nbsp;${arr[0].Date}`;
             transcript.innerHTML = arr[0].Transcript;
             transcriptTitle.innerHTML = arr[0].Title;
 
@@ -327,8 +337,6 @@ view.on("immediate-click", (event) => {
         let result = hitResult.results[0].graphic;
 
         let resultObjectID = result.attributes;
-
-        console.log(resultObjectID);
 
         view.whenLayerView(result.layer).then((layerView) => {
             highlight?.remove();
@@ -364,9 +372,13 @@ function show_image(direction) {
   article.innerHTML = arr[currentRecordIndex].Title;
   details.innerHTML = arr[currentRecordIndex].Topic;
   place.innerHTML = `${arr[currentRecordIndex].City}, ${arr[currentRecordIndex].State}`;
-  date.innerHTML = arr[currentRecordIndex].Date;
+  // date.innerHTML = arr[currentRecordIndex].Date; 
+  date.innerHTML = `&nbsp;|&nbsp;${arr[currentRecordIndex].Date}`;
   transcript.innerHTML = arr[currentRecordIndex].Transcript;
   transcriptTitle.innerHTML = arr[currentRecordIndex].Title;
+  dynamicCaption = arr[currentRecordIndex].Caption;
+
+  $('#popup-image-id').attr('data-caption', dynamicCaption);
 
   recordCounter = currentRecordIndex + 1;
   $('#counterText').text(recordCounter);

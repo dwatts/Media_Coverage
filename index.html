@@ -45,8 +45,8 @@
             <li class="nav-item">
                 <a href="https://dwatts.github.io/RC_3D/" class="nav-link">Planning & Building</a>
             </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Living & Leaving</a>
+            <li class="nav-item-inactive">
+                <a href="#" class="nav-link-inactive">Living & Leaving</a>
             </li>
             <li class="nav-item">
                 <a href="https://dwatts.github.io/Afterlives/" class="nav-link">Afterlives</a>
@@ -68,7 +68,7 @@
 
         <div id="help-btn" class="help-btn">
             <i class="fa-solid fa-question"></i>
-            <span class="tooltiptext">Read about the history of Resurrection City</span>
+            <span class="tooltiptext">Learn about using the app</span>
         </div>
     </div>
 
@@ -94,8 +94,9 @@
         </div>
         <div class="panel-line"></div>
         <div class="side-panel-text">
-            <p>This map samples some of the media coverage shared with folks in every corner of the US, including Resurrection City's own newsletter and radio program. Some of these newspaper articles demonstrate the antipathy towards the movement. Many discuss the complexity of issues like nonviolence, systemic poverty, and permitting on the National Mall. </p>
-            <img class="app-image" src="./assets/images/MediaSplash.png" alt="Collage placeholder image" data-caption="Collage placeholder image.">
+            <p>While Resurrection City was emerging on the Mall, what was the rest of the US hearing and what did they think about it? What were folks reading and seeing in your hometown?</p>
+            <img class="app-image" src="./assets/images/MediaSplash.png" alt="Collage placeholder image" data-caption="Resurrection City newspaper headline collage.">
+            <p>Resurrection City was the product of a truly national movement of activists building on the African American civil rights protests of the 1950s-60s. This represented a multiracial movement, championed by recently assassinated Dr. Martin Luther King Jr. and realized by the thousands of residents in Resurrection City. Newspapers, radio programs, television stations, photographers, and independent journalists from across the country traveled to cover Resurrection City and the Poor People's Campaign. This map samples some of the media coverage shared with folks in every corner of the US, including Resurrection City's own newsletter and radio program. Some of these newspaper articles demonstrate the antipathy towards the movement. Many discuss the complexity of issues like nonviolence, systemic poverty, and permitting on the National Mall.</p><p>What was being talked about in your part of the country? If your town isn't on the map, click here to search on <a href="https://www.newspapers.com"  target="_blank" class="link">newspapers.com</a>.</p>
         </div>
     </div>
 
@@ -174,9 +175,6 @@
 
     <!--Transcript Modal-->
 
-
-    <!--End Transcript Modal-->
-
     <div class="modal-container" id="transcript-modal">
         <div class="modal-inner">
             <a href="#" class="modal-close" id="transcript-close">
@@ -189,23 +187,88 @@
         </div>
     </div>
 
+    <!--End Transcript Modal-->
+
+    <!-- Navigation Modal -->
+
+    <div class="modal-container" id="nav-modal">
+        <div class="nav-modal-inner">
+            <a href="#" class="modal-close" id="nav-close">
+                <i class="fa-solid fa-close"></i>
+            </a>
+            
+            <div class="options-section">
+                <h1>Explore the Atlas</h1>
+                <div class="options-section-text">
+                    <span>Explore our recreations of Resurrection City across these four other sequences, each detailing an important phase of this site's history and impact:</span>
+                </div>
+                <div class="options-container">
+                    <div class="option-wrapper">
+                        <div class="option">
+                            <a href="https://dwatts.github.io/RC_Digital_Atlas/" target="_blank">
+                            <img src="./assets/images/Navigation/landing.png" alt="">
+                            <h3>Introduction</h3>
+                            </a>
+                        </div>
+                        <span>Explore an introduction to Resurrection City.</span>
+                    </div>
+                    <div class="option-wrapper">
+                        <div class="option">
+                            <a href="https://dwatts.github.io/Caravan_Routes/" target="_blank">
+                            <img src="./assets/images/Navigation/imagining.jpg" alt="">
+                            <h3>Imagining</h3>
+                            </a>
+                        </div>
+                        <span>How was Resurrection City imagined?</span>
+                    </div>
+                    <div class="option-wrapper">
+                        <div class="option">
+                            <a href="https://dwatts.github.io/RC_3D/" target="_blank">
+                            <img src="./assets/images/Navigation/planning.jpg" alt="">
+                            <h3>Planning &amp Building</h3>
+                            </a>
+                        </div>
+                        <span>Find out more about Resurrection City's design and construction through a 3D model.</span>
+                    </div>
+                    <div class="option-wrapper">
+                        <div class="option">
+                            <a href="https://dwatts.github.io/Afterlives/" target="_blank">
+                            <img src="./assets/images/Navigation/afterlives.jpg" alt="">
+                            <h3>Afterlives</h3>
+                            </a>
+                        </div>
+                        <span>What is the legacy of Resurrection City?</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- End Navigation Modal -->
+
     <!--About Modal-->
 
     <div class="modal-container" id="about-modal">
-        <div class="modal-inner">
+        <div class="modal-inner-about">
             <a href="#" class="modal-close" id="about-close">
                 <i class="fa-solid fa-close"></i>
             </a>
             <h3>About the Project</h3>
             <div class="panel-line"></div>
             <div>
-                <p>While Resurrection City was emerging on the Mall, what was the rest of the US hearing and what did they think about it? What were folks reading and seeing in your hometown?</p>
-                <p>Resurrection City was the product of a truly national movement of activists building on the African American civil rights protests of the 1950s-60s. This represented a multiracial movement, championed by recently assassinated Dr. Martin Luther King Jr. and realized by the thousands of residents in Resurrection City. Newspapers, radio programs, television stations, photographers, and independent journalists from across the country traveled to cover Resurrection City and the Poor People’s Campaign. This map samples some of the media coverage shared with folks in every corner of the US, including Resurrection City’s own newsletter and radio program. Some of these newspaper articles demonstrate the antipathy towards the movement. Many discuss the complexity of issues like nonviolence, systemic poverty, and permitting on the National Mall. What was being talked about in your part of the country? If your town isn’t on the map, click here to search on <a href="https://www.newspapers.com"  target="_blank" class="link">newspapers.com</a>.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsum cupiditate autem culpa beatae quo eligendi eos. Neque nulla officiis earum vel sapiente odio qui, sit aliquid suscipit quidem minima?
+                Laborum molestiae in deleniti sed magnam voluptates dicta quos facilis non autem exercitationem nihil debitis ea nesciunt praesentium, veniam ab accusantium, repellendus dolores repudiandae necessitatibus illo. Perspiciatis autem itaque optio! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea temporibus consectetur nemo unde, provident alias, eveniet totam explicabo corrupti repudiandae voluptas obcaecati exercitationem assumenda ipsam optio, qui reprehenderit iste? Neque.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsum cupiditate autem culpa beatae quo eligendi eos. Neque nulla officiis earum vel sapiente odio qui, sit aliquid suscipit quidem minima?
+                Laborum molestiae in deleniti sed magnam voluptates dicta quos facilis non autem exercitationem nihil debitis ea nesciunt praesentium, veniam ab accusantium, repellendus dolores repudiandae necessitatibus illo. Perspiciatis autem itaque optio! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos, reprehenderit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsum cupiditate autem culpa beatae quo eligendi eos. Neque nulla officiis earum vel sapiente odio qui, sit aliquid suscipit quidem minima?
+                Laborum molestiae in deleniti sed magnam voluptates dicta quos facilis non autem exercitationem nihil debitis ea nesciunt praesentium, veniam ab accusantium, repellendus dolores repudiandae necessitatibus illo. Perspiciatis autem itaque optio! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas fugit ducimus architecto porro. Aliquam possimus culpa sapiente. Excepturi vel consequuntur rem at officiis in. Distinctio in voluptatum, esse sunt ad, deserunt neque eius, nesciunt magnam saepe tempore repellendus. Pariatur eum maxime animi quam deserunt corporis amet porro tenetur enim commodi?</p>
             </div>
         </div>
     </div>
 
-    <!--End About Modal-->
+    <!-- End About Modal -->
 
     <!--Picture Modal-->
 

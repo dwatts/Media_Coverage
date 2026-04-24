@@ -156,6 +156,15 @@ body,
     transition: color 0.3s;
 }
 
+.nav-link-inactive {
+    cursor: default;
+    font-family: var(--Bodoni);
+    color: var(--Dark-Brown);
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
+}
+
 /*End Navbar*/
 
 /*Side Panel Buttons Container*/
@@ -169,6 +178,7 @@ body,
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 4;
 }
 
 .right-panel-btn-container {
@@ -180,6 +190,7 @@ body,
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 4;
 }
 
 /*Zoom In / Out Button*/
@@ -234,7 +245,7 @@ body,
     top: 0;
     left: 0;
     right: 0;
-    z-index: 3;
+    z-index: 5;
     position: absolute;
     display: none;
     align-items: center;
@@ -385,7 +396,7 @@ body,
     position: fixed;
     top: 5rem;
     left: 0;
-    height: 60%;
+    height: 80%;
     width: 32rem;
     background: linear-gradient(var(--Background-Blue), var(--Background-Blue-Alt));
     z-index: 2;
@@ -451,6 +462,7 @@ body,
 
 .title-close h3,
 .modal-inner h3,
+.modal-inner-about h3,
 .splash-inner h3 {
     color: var(--Dark-Brown);
     letter-spacing: .15rem;
@@ -461,10 +473,10 @@ body,
 
 .side-panel-text p,
 .modal-inner p,
+.modal-inner-about p,
 .help-panel p,
 .splash-inner p,
-.model-transcript-text p,
-#img-caption {
+.model-transcript-text p {
     font-family: var(--Bodoni);
     font-size: 1rem;
     color: var(--Dark-Brown);
@@ -569,6 +581,152 @@ body,
 
 /***End About Panel***/
 
+/***Nav Modal***/
+
+.nav-modal-inner {
+    width: 80%;
+    height: 80%;
+    background: linear-gradient(var(--Background-Blue), var(--Background-Blue-Alt));
+    padding: 1.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+    border-radius: .5rem;
+}
+
+.options-section {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.options-section h1 {
+  padding-bottom: 3rem;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  color: var(--Dark-Brown);
+  cursor: default;
+}
+
+.options-section-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  cursor: default;
+}
+
+.options-section-text span {
+  font-size: 1.2rem;
+  color: var(--Dark-Brown);
+  font-weight: 600;
+  font-family: var(--Bodoni);
+  color: white;
+  letter-spacing: .05rem;
+}
+
+.options-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+  padding-top: 3rem;
+  height: auto;
+}
+
+.option-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30rem;
+  height: 20rem;
+}
+
+.option-wrapper span { 
+  color: #fff;
+  font-family: var(--Bodoni);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  text-align: center;
+  letter-spacing: .05rem;
+  cursor: default;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.option {
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  position: relative;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0px 4px 15px -1px var(--Dark-Brown);
+  transition: transform 0.3s;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.option:hover {
+  transform: translateY(-0.5rem);
+}
+
+/* .option > img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  position: absolute;
+  border-radius: inherit;
+  opacity: 0.5;
+} */
+
+.option a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative; /* important */
+}
+
+.option img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  opacity: 0.5;
+}
+
+.option h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  letter-spacing: .2rem;
+  text-transform: uppercase;
+  color: var(--Dark-Brown);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90%;
+  font-family: var(--Martin);
+}
+
+
+/***End Nav Modal***/
+
 /***About Modal***/
 
 .modal-container {
@@ -599,6 +757,26 @@ body,
     overflow: hidden;
 }
 
+.modal-inner-about {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 80%;
+    /* width: auto;
+    max-width: 50rem;
+    max-height: 85vh; */
+    /* background: linear-gradient(var(--Background), var(--Background-Alt)); */
+    background: linear-gradient(var(--Background-Blue), var(--Background-Blue-Alt));
+    padding: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: .5rem;
+    overflow: hidden;
+    z-index: 10;
+}
+
 .modal-close {
     color: var(--Dark-Brown);
     font-size: 1.5rem;
@@ -623,13 +801,22 @@ body,
     margin-top: 1.5rem;
 }
 
+.modal-inner span {
+    font-family: var(--Bodoni);
+    font-size: .8rem;
+    color: var(--Dark-Brown);
+    margin: .75rem 0;
+    font-weight: 400;
+    line-height: 1.35rem;
+    letter-spacing: .02rem;
+    cursor: default;
+}
+
 .modal-transcript-text {
     width: 100%;
     height: 85%;
     overflow-y: auto;
 }
-
-/***End About Modal***/
 
 /***General Popup Styling***/
 

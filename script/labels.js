@@ -32,7 +32,7 @@ const cityLabels = {  // autocasts as new LabelClass()
             }
     },
     maxScale: 0,
-    minScale: 5000000,
+    minScale: 7000000,
     // labelPlacement: "above-center",
     labelExpressionInfo: {
         value: "{City}, {State}"
